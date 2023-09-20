@@ -10,23 +10,23 @@ const book2 = {
 }
 
 const bookUtils = {
-    getFirstPublished: function(b1,b2){
-        return b1.year < b2.year ? b1:b2;
+    getFirstPublished: function(firstBook,secondBook){
+        return firstBook.year < secondBook.year ? book1:book2;
     },
 
-    setNewEdition: function(bo, ediYear){
-        if (bo.hasOwnProperty("latestEdition")){
+    setNewEdition: function(anyBook, ediYear){
+        if (anyBook.hasOwnProperty("latestEdition")){
             // override the old value if property exists /or add the new property if it doesn't exist 
-            bo.latestEdition = ediYear;
+            anyBook.latestEdition = ediYear;
         }
         else{
             //add the new property to the object 
-            bo.latestEdition = ediYear;
+            anyBook.latestEdition = ediYear;
         }
     },
 
-    setLanguage: function(bo, lang){
-        bo.hasOwnProperty("language")? bo.language = lang : bo.language = lang;
+    setLanguage: function(anyBook, lang){
+        anyBook.hasOwnProperty("language")? anyBook.language = lang : anyBook.language = lang;
     },
 
     setTranslation: function(book1, lang, trans){
