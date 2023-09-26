@@ -39,4 +39,22 @@ function getPrice(candyStore,id){
 const thePrice = getPrice(candyStore,'5hd7y');
 console.log(thePrice)
 
+// 3.
+function addCandy(candyStore, id, name, price){
+   
+    
+}
+
+//4.
+
+function buyCandy (candyStore,id){
+    const buy = candyStore.candies.find((candy)=>{
+        return candy.id === id ;
+    })
+    buy.amount = buyCandy.amount -1;
+    return candyStore.cashRefister = candyStore.cashRefister + buy.price
+}
+
+const totalCashier = buyCandy(candyStore,'5hd7y');
+console.log(totalCashier)
 
