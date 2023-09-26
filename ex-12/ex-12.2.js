@@ -42,8 +42,18 @@ console.log(thePrice)
 // 3.
 function addCandy(candyStore, id, name, price){
    
-    
+    const newCandy = {
+        name: name,
+        id: id,
+        price: price,
+        amount: amount
+    };
+    candyStore.candies.push(newCandy);
+    return candyStore;
 }
+
+const addingNewCandy = addCandy(candyStore,'23po22','Bublle-Gum',6.78,amount=1);
+console.log(addingNewCandy)
 
 //4.
 
@@ -57,4 +67,5 @@ function buyCandy (candyStore,id){
 
 const totalCashier = buyCandy(candyStore,'5hd7y');
 console.log(totalCashier)
+
 
