@@ -28,3 +28,15 @@ function getCandy(candyStore,id){
 
 const res = getCandy(candyStore,'as12f');
 console.log(res);
+
+// 2.
+function getPrice(candyStore,id){
+    const res = candyStore.candies.find((candy)=>{
+        return candy.id === id ;
+    })
+    return res.price;
+}
+const thePrice = getPrice(candyStore,'5hd7y');
+console.log(thePrice)
+
+
