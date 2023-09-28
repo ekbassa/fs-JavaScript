@@ -36,5 +36,28 @@ const showFirstAndLast = function (arr) {
   return stringArrOnly.filter((item)=>item !== undefined);
 };
 
-const res = showFirstAndLast(myArr1);
-console.log(res);
+// const res = showFirstAndLast(myArr1);
+// console.log(res);
+
+/***************************************        Ex-2.11-4    ****************************** */
+
+function vowelCount(str) {
+    const lowerCase = str.toLowerCase();
+    
+    const vowelLetters = ['a','e','i','o','u'];
+
+    const vowelsObject = {}
+
+    for (let char of lowerCase){
+        if (vowelLetters.includes(char)){
+            // if the key already exist increment it otherwise initials it by one
+
+            vowelsObject[char] = vowelsObject[char] ? vowelsObject[char] + 1 : 1;
+        }
+    }
+    return vowelsObject
+}
+
+// const result = vowelCount('Hello World! where are you');
+// console.log(result);
+  
