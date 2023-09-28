@@ -30,10 +30,10 @@ const showFirstAndLast = function (arr) {
   arr.shift();
   const stringArrOnly = arr.map((item) => {
     if (typeof item === "string") {
-      return item
+      return item;
     }
   });
-  return stringArrOnly.filter((item)=>item !== undefined);
+  return stringArrOnly.filter((item) => item !== undefined);
 };
 
 // const res = showFirstAndLast(myArr1);
@@ -42,22 +42,29 @@ const showFirstAndLast = function (arr) {
 /***************************************        Ex-2.11-4    ****************************** */
 
 function vowelCount(str) {
-    const lowerCase = str.toLowerCase();
-    
-    const vowelLetters = ['a','e','i','o','u'];
+  const lowerCase = str.toLowerCase();
 
-    const vowelsObject = {}
+  const vowelLetters = ["a", "e", "i", "o", "u"];
 
-    for (let char of lowerCase){
-        if (vowelLetters.includes(char)){
-            // if the key already exist increment it otherwise initials it by one
+  const vowelsObject = {};
 
-            vowelsObject[char] = vowelsObject[char] ? vowelsObject[char] + 1 : 1;
-        }
+  for (let char of lowerCase) {
+    if (vowelLetters.includes(char)) {
+      // if the key already exist increment it otherwise initials it by one
+
+      vowelsObject[char] = vowelsObject[char] ? vowelsObject[char] + 1 : 1;
     }
-    return vowelsObject
+  }
+  return vowelsObject;
 }
 
 // const result = vowelCount('Hello World! where are you');
 // console.log(result);
-  
+
+/*******************************************        Ex-11.2-5                   ************************************ */
+const capitalize = function (str) {
+  return str.toUpperCase();
+};
+
+const res = capitalize("hello how are you!");
+console.log(res);
