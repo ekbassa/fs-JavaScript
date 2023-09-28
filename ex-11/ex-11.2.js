@@ -70,7 +70,38 @@ const capitalize = function (str) {
 // console.log(res);
 
 /******************************************************      Ex-11.2-6            ************************************ */
-const shiftLetters = function (str) {};
+const shiftLetters = function (str) {
+  
+  // convert int an array
+  const characters = str.split('');
+  console.log(characters)
+
+  // loop over the array and shift down
+
+  const shiftArr = characters.map((letter)=>{
+    if (letter >='a' && letter <= 'z'){
+        return String.fromCharCode(((letter.charCodeAt(0) - 97 + 25) % 26) + 97); 
+    }else if (letter >= 'A' && letter <= 'Z') {
+        return String.fromCharCode(((letter.charCodeAt(0) - 65 + 25) % 26) + 65);
+    }else {
+        // Non-alphabetic characters remain unchanged
+        return letter;
+    }
+
+  })
+  return shiftArr.join(' ')
+    
+};
+
+const res = shiftLetters('abcde dc bd');
+console.log(res);  // Output: 'abcd cb ac'
+
+
+
+
+
+
+
 
 /*************************************************    Ex-11.2-7         ******************************************** */
 
@@ -86,14 +117,13 @@ function swapCase(str) {
   const capitalizeArr = arr.map((word, index) => {
     if (index % 2 !== 0) {
       return word.toUpperCase();
-    }
-    else{
-        return word;
+    } else {
+      return word;
     }
   });
   // convert back to string
-  return capitalizeArr.join(' ');
+  return capitalizeArr.join(" ");
 }
 
-const res = swapCase("hello how are you!");
-console.log(res);
+// const res = swapCase("hello how are you!");
+// console.log(res);
