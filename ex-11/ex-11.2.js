@@ -66,5 +66,34 @@ const capitalize = function (str) {
   return str.toUpperCase();
 };
 
-const res = capitalize("hello how are you!");
+// const res = capitalize("hello how are you!");
+// console.log(res);
+
+/******************************************************      Ex-11.2-6            ************************************ */
+const shiftLetters = function (str) {};
+
+/*************************************************    Ex-11.2-7         ******************************************** */
+
+function swapCase(str) {
+  //convert to lowercase
+  str.toLowerCase();
+
+  // convert in to an array
+  const arr = str.split(" ");
+
+  //capitalize each word in an odd index
+
+  const capitalizeArr = arr.map((word, index) => {
+    if (index % 2 !== 0) {
+      return word.toUpperCase();
+    }
+    else{
+        return word;
+    }
+  });
+  // convert back to string
+  return capitalizeArr.join(' ');
+}
+
+const res = swapCase("hello how are you!");
 console.log(res);
