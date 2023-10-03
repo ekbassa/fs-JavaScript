@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Font Size Changes</title>
+</head>
+<body>
+
+    <div class="conatiner">
+        <p id="change" style="font-size: 16px;">Font Size Changer</p><br>
+        <input type="button" id="increase" value="+">
+        <input type="button" name="" id="decrease" value="-">
+
+    </div>
+
+    <script>
+        const myStr = document.getElementById('change');
+        const btnIncrease = document.getElementById('increase');
+        const btnDecrease = document.getElementById('decrease');
+
+        btnIncrease.addEventListener('click',function(e){
+            let currentFontSize = parseInt( window.getComputedStyle(myStr).fontSize,10);
+            
+            if (currentFontSize >= 100 ){
+                currentFontSize =100;
+            }
+            let newSize = currentFontSize += 10;
+
+
+            
+            myStr.setAttribute('style','font-size: ' + newSize);
+            myStr.style.fontSize = newSize + 'px';
+            console.log(currentFontSize)
+        })
+
+        btnDecrease.addEventListener('click',function(){
+            let currentFontSize = parseInt( window.getComputedStyle(myStr).fontSize);
+            let newSize = currentFontSize-=10;
+
+            if (currentFontSize < 6 ){
+                currentFontSize = 6 ;
+            }
+            myStr.setAttribute('style','font-size: ' + newSize);
+            myStr.style.fontSize = newSize + 'px';
+            console.log(currentFontSize)
+        })
+    </script>
+</body>
+</html>
